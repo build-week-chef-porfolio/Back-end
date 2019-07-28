@@ -16,4 +16,6 @@ router.get('/users/post', getAllPosts);
 router.get('/users/post/:id', getThePostById);
 router.delete('/users');
 
+
+
 module.exports = router;
