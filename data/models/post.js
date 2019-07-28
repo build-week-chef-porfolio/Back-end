@@ -3,7 +3,9 @@ const { ErrorHandler } = require('../../helpers');
 
 const getPostById = async id => {
   try {
-    const post = await db('post').where({ id }).first();
+    const post = await db('post')
+      .where({ id })
+      .first();
     return post;
   } catch (error) {
     throw new ErrorHandler(500, error.message);
@@ -50,8 +52,35 @@ const addPost = async post => {
   }
 };
 
+const updatePost = async (id, post) => {
+  try {
+    const updated = await db('post')
+      .update(post)
+      .where({ id });
+    if (updated) {
+      return await getPostById(id);
+    }
+  } catch (error) {
+    throw new ErrorHandler(500, error.message);
+  }
+};
+
+const deletePost = async id => {
+  try {
+    const deleted = await db('post')
+      .where({ id })
+      .del();
+    return deleted;
+  } catch (error) {
+    throw new ErrorHandler(500, error.message);
+  }
+};
+
+
 module.exports = {
   getPosts,
   addPost,
   getPostById,
+  updatePost,
+  deletePost,
 };

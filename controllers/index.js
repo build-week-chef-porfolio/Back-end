@@ -39,6 +39,21 @@ async function loginUser(req, res, next) {
   });
 }
 
+const getAllPosts = async (req, res, next) => {
+  try {
+    const posts = await Post.getPosts();
+    if (!posts) {
+      throw new ErrorHandler(404, 'No posts found in database');
+    }
+    return res.status(200).json({
+      message: 'Ok',
+      posts,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 const createNewPost = async (req, res, next) => {
   try {
     const post = await Post.addPost(req.body);
@@ -57,6 +72,36 @@ const createNewPost = async (req, res, next) => {
   }
 };
 
+const updatePost = async (req, res, next) => {
+  try {
+    const post = await Post.updatePost(req.params.id, req.body);
+    if (post) {
+      return res.status(200).json({ message: 'Post updated', post });
+    }
+    throw new ErrorHandler(500, 'Could not update the project');
+  } catch (error) {
+    if (!error.statusCode) {
+      error.statusCode = 500;
+    }
+    next(error);
+  }
+};
+
+const deletePost = async (req, res, next) => {
+  try {
+    const deleted = await Post.deletePost(req.params.id);
+    if (deleted) {
+      return res.status(200).json({ message: 'Post has been deleted' });
+    }
+    throw new ErrorHandler(500, 'Could not delete the post');
+  } catch (error) {
+    if (!error.statusCode) {
+      error.statusCode = 500;
+    }
+    next(error);
+  }
+};
+
 // router.post('/register', async (req, res) => {
 //   const user = await User.registerUser(req.body);
 //   return res.status(201).json({ user, message: 'User created successfully' });
@@ -66,4 +111,7 @@ module.exports = {
   createNewUser,
   loginUser,
   createNewPost,
+  getAllPosts,
+  updatePost,
+  deletePost,
 };
