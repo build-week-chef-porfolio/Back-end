@@ -22,21 +22,25 @@ const createNewUser = async (req, res, next) => {
   }
 };
 
-async function loginUser(req, res, next) {
+const loginUser = async (req, res, next) => {
   const { username, password } = req.body;
-  if (!username || !password) {
-    throw new ErrorHandler(400, 'username or password are required');
+  try {
+    if (!username || !password) {
+      throw new ErrorHandler(400, 'username or password are required');
+    }
+    const user = await User.findBy({ username });
+    const passwordMatched = user && bcrypt.compareSync(password, user.password);
+    if (!passwordMatched) {
+      throw new ErrorHandler(401, 'Invalid credentials');
+    }
+    const token = generateToken(user);
+    return res.status(200).json({
+      message: `Welcome ${username}`,
+      token,
+    });
+  } catch (error) {
+    next(error);
   }
-  const user = await User.findBy({ username });
-  const passwordMatched = user && bcrypt.compareSync(password, user.password);
-  if (!passwordMatched) {
-    throw new ErrorHandler(401, 'Invalid credentials');
-  }
-  const token = generateToken(user);
-  return res.status(200).json({
-    message: `Welcome ${username}`,
-    token,
-  });
 }
 
 const getAllPosts = async (req, res, next) => {

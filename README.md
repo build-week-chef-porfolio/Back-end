@@ -53,6 +53,10 @@ Run the server
 npm run server
 ```
 
+## Restrictions
+If you would like to make a request to the post endpoint, a valid JSON web token is required in your request headers.authorization. This token is acquired by successfully registering an account and logging in.
+
+
 # Endpoints
 
 ## Registration and Log In

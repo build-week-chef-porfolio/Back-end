@@ -2,6 +2,8 @@ const User = require('../data/models/user');
 const Project = require('../data/models/post');
 const { ErrorHandler } = require('../helpers/');
 
+
+
 const addUserValidator = (req, res, next) => {
   try {
     if (!Object.keys(req.body).length) {
@@ -56,7 +58,7 @@ async function validateProjectId(req, res, next) {
   } catch (error) {
     next(error);
   }
-};
+}
 
 module.exports = {
   addUserValidator,
