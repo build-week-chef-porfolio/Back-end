@@ -54,6 +54,39 @@ const getAllPosts = async (req, res, next) => {
   }
 };
 
+const getThePostById = async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const post = await Post.getPostById(id);
+    if (!post) {
+      throw new ErrorHandler(404, 'No post with that ID is found in database');
+    }
+    return res.status(200).json({
+      message: 'Ok',
+      post,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+// const getThePostById = async (req, res, next) => {
+//    const {id} = req.params;
+
+//    try {
+//      const post = await Post.getPostById(id);
+//      if(post) {
+//        res.json(post);
+//      } else {
+//         res.status(404).json({ message: 'Could not find the post with given id'})
+//      }
+
+//    } catch (error){
+//       res.status(500).json({ message: 'Failed to ge the post'}))
+//    }
+
+// }
+
 const createNewPost = async (req, res, next) => {
   try {
     const post = await Post.addPost(req.body);
@@ -114,4 +147,5 @@ module.exports = {
   getAllPosts,
   updatePost,
   deletePost,
+  getThePostById,
 };
