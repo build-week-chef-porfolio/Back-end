@@ -74,22 +74,6 @@ const getThePostById = async (req, res, next) => {
   }
 };
 
-// const getThePostById = async (req, res, next) => {
-//    const {id} = req.params;
-
-//    try {
-//      const post = await Post.getPostById(id);
-//      if(post) {
-//        res.json(post);
-//      } else {
-//         res.status(404).json({ message: 'Could not find the post with given id'})
-//      }
-
-//    } catch (error){
-//       res.status(500).json({ message: 'Failed to ge the post'}))
-//    }
-
-// }
 
 const createNewPost = async (req, res, next) => {
   try {
@@ -139,10 +123,6 @@ const deletePost = async (req, res, next) => {
   }
 };
 
-// router.post('/register', async (req, res) => {
-//   const user = await User.registerUser(req.body);
-//   return res.status(201).json({ user, message: 'User created successfully' });
-// });
 
 module.exports = {
   createNewUser,
