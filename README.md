@@ -46,7 +46,7 @@ knex migrate:latest
 ```
 Run tests
 ```
-npm run test --- Reminder: tests are not set up yet
+npm run test 
 ```
 Run the server
 ```
