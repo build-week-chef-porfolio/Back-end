@@ -1,5 +1,6 @@
 # Chef Portfolio - Back end
 
+## Important: The app is deployed on Heroku ##
 
 ## Description
 
@@ -138,8 +139,4 @@ imgURL, yield, serving, time are optional
 
 **DEL** `https://chefs-portfolio.herokuapp.com/api/users/post/:id` will delete the post at this ID, with the message: Post has been deleted
 
-**PUT** `https://chefs-portfolio.herokuapp.com/api/users/post/:id` will edit the post at this ID, and return the edited object.
-
-
-
-////
+**PUT** `https://chefs-portfolio.herokuapp.com/api/users/post/:id` will edit the post at this ID, and return the edited object: title, meal_type, description, ingredients, and directions are required fields
