@@ -73,7 +73,7 @@ If you would like to make a request to the post endpoint, a valid JSON web token
 | password   | String | <p>Users password</p>                                    |
 | email      | String | <p>Users email </p>                                      |
 
-**POST** `http://localhost:5000/api/users/register` will create a new user: username, password and email are required fields.
+**POST** `https://chefs-portfolio.herokuapp.com/api/users/register` will create a new user: username, password and email are required fields.
 
 
 ### Success Response example
@@ -108,7 +108,7 @@ Register Success
 
 
 
-**POST** `http://localhost:5000/api/users/login` will log the user in, and send back a token: username, password and email are required.
+**POST** `https://chefs-portfolio.herokuapp.com/api/users/login` will log the user in, and send back a token: username, password and email are required.
 
 
 
@@ -128,14 +128,14 @@ Login Success
 
 ## Post
 
-**GET** `http://localhost:5000/api/users/post` will return an object with one property('message') and array('posts') that consists of other objects(individual posts).
+**GET** `https://chefs-portfolio.herokuapp.com/api/users/post` will return an object with one property('message') and array('posts') that consists of other objects(individual posts).
 
-**GET** `http://localhost:5000/api/users/post/:id` will return an object corresponding to the todo at that ID.
+**GET** `https://chefs-portfolio.herokuapp.com/api/users/post/:id` will return an object corresponding to the todo at that ID.
 
-**POST** `http://localhost:5000/api/users/post` will add a new post, and return the created object: title, meal_type, description, ingredients, and directions are required fields.
+**POST** `https://chefs-portfolio.herokuapp.com/api/users/post` will add a new post, and return the created object: title, meal_type, description, ingredients, and directions are required fields.
 
 imgURL, yield, serving, time are optional
 
-**DEL** `http://localhost:5000/api/users/post/:id` will delete the post at this ID, with the message Post has been deleted
+**DEL** `https://chefs-portfolio.herokuapp.com/api/users/post/:id` will delete the post at this ID, with the message: Post has been deleted
 
-**PUT** `http://localhost:5000/api/users/post/:id` will edit the post at this ID, and return the edited object.
+**PUT** `https://chefs-portfolio.herokuapp.com/api/users/post/:id` will edit the post at this ID, and return the edited object.
