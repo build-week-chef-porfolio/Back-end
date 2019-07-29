@@ -1,6 +1,6 @@
 const express = require('express');
 const { createNewUser, createNewPost, getAllPosts, updatePost,
-  deletePost, getThePostById } = require('../controllers');
+  deletePost, getThePostById, logOut } = require('../controllers');
 
 const { loginUser } = require('../controllers');
 const { authenticate } = require('../auth/authenticate');
@@ -16,6 +16,6 @@ router.put('/users/post/:id', authenticate, validatePostId, addPostValidator, up
 router.delete('/users/post/:id', authenticate, validatePostId, deletePost);
 router.get('/users/post', authenticate, getAllPosts);
 router.get('/users/post/:id', authenticate, getThePostById);
-router.delete('/users');
+// router.post('/users/logout', logOut);
 
 module.exports = router;

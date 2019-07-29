@@ -1,3 +1,4 @@
+const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const { ErrorHandler } = require('../helpers');
 const User = require('../data/models/user');
@@ -41,7 +42,7 @@ const loginUser = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-}
+};
 
 const getAllPosts = async (req, res, next) => {
   try {
@@ -73,7 +74,6 @@ const getThePostById = async (req, res, next) => {
     next(error);
   }
 };
-
 
 const createNewPost = async (req, res, next) => {
   try {
@@ -123,6 +123,23 @@ const deletePost = async (req, res, next) => {
   }
 };
 
+// const logOut = async (req, res) => {
+//    const { username } = req.body;
+//    const token = await User.findBy({ username });
+
+//   if (token) {
+
+//     token.destroy(err => {
+//       if (err) {
+//         res.status(500).json({ message: 'Logout failed' });
+//       } else {
+//         res.status(200).json({ message: 'Bye, thanks for visiting' });
+//       }
+//     });
+//   } else {
+//     res.status(200).json({ message: 'Bye, thanks for visiting' });
+//   }
+// };
 
 module.exports = {
   createNewUser,
@@ -132,4 +149,4 @@ module.exports = {
   updatePost,
   deletePost,
   getThePostById,
-};
+}
