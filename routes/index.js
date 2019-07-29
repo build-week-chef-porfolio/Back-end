@@ -1,5 +1,7 @@
 const express = require('express');
-const { createNewUser, createNewPost, getAllPosts, updatePost, deletePost, getThePostById } = require('../controllers');
+const { createNewUser, createNewPost, getAllPosts, updatePost,
+  deletePost, getThePostById } = require('../controllers');
+
 const { loginUser } = require('../controllers');
 const { authenticate } = require('../auth/authenticate');
 
