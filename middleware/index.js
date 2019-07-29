@@ -41,7 +41,7 @@ const addPostValidator = (req, res, next) => {
   }
 };
 
-async function validateProjectId(req, res, next) {
+async function validatePostId(req, res, next) {
   try {
     const { id } = req.params;
     if (!id || !Number(id)) {
@@ -63,5 +63,5 @@ async function validateProjectId(req, res, next) {
 module.exports = {
   addUserValidator,
   addPostValidator,
-  validateProjectId,
+  validatePostId,
 };

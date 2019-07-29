@@ -46,7 +46,7 @@ knex migrate:latest
 ```
 Run tests
 ```
-npm run test 
+npm run test
 ```
 Run the server
 ```
@@ -104,7 +104,7 @@ Register Success
 | -------- | ------ | -------------------------- |
 | username | String | <p>Users username</p>      |
 | password | String | <p>Users password</p>      |
-| email    | String | <p>Users email</p>      |
+| email    | String | <p>Users email</p>         |
 
 
 
