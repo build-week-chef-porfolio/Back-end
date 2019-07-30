@@ -131,14 +131,16 @@ Login Success
 
 **GET** `https://chefs-portfolio.herokuapp.com/api/users/post` will return an object with one property('message') and array('posts') that consists of other objects(individual posts).
 
-**GET** `https://chefs-portfolio.herokuapp.com/api/users/post/:id` will return an object corresponding to the todo at that ID.
+**GET** `https://chefs-portfolio.herokuapp.com/api/users/post/:id` will return an object with one property('message') and the post(object) that is corresponding to the post at that ID.
 
 **GET** `https://chefs-portfolio.herokuapp.com/api/users/chef` will return an object with one property('message') and array('chefs') that consists of other objects(individual chefs).
 
-**POST** `https://chefs-portfolio.herokuapp.com/api/users/post` will add a new post, and return the created object: title, meal_type, description, ingredients, and directions are required fields.
+**GET** `https://chefs-portfolio.herokuapp.com/api/users/chef/:id` will return an object with one property('message') and the chef(object) that is corresponding to the chef at that ID.
 
-imgURL, yield, serving, time are optional
+**POST** `https://chefs-portfolio.herokuapp.com/api/users/post` will add a new post, and return the created object: title, meal_type, description, ingredient, and directions are required fields.
+
+imgURL, yield, serving, prep_time, total_time, cook_time, oven_temperature are optional
 
 **DEL** `https://chefs-portfolio.herokuapp.com/api/users/post/:id` will delete the post at this ID, with the message: Post has been deleted
 
-**PUT** `https://chefs-portfolio.herokuapp.com/api/users/post/:id` will edit the post at this ID, and return the edited object: title, meal_type, description, ingredients, and directions are required fields
+**PUT** `https://chefs-portfolio.herokuapp.com/api/users/post/:id` will edit the post at this ID, and return the edited object: title, meal_type, description, ingredient, and directions are required fields
