@@ -108,6 +108,23 @@ const getTheChefById = async (req, res, next) => {
   }
 };
 
+const getTheChefByCity = async (req, res, next) => {
+  const { city } = req.params;
+
+  try {
+    const chefs = await Chef.getChefByCity(city);
+    if (!chefs) {
+      throw new ErrorHandler(404, 'No Chef in that city is found in database');
+    }
+    return res.status(200).json({
+      message: 'Ok',
+      chefs,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 const createNewPost = async (req, res, next) => {
   try {
     const post = await Post.addPost(req.body);
@@ -156,23 +173,22 @@ const deletePost = async (req, res, next) => {
   }
 };
 
-// const logOut = async (req, res) => {
-//    const { username } = req.body;
-//    const token = await User.findBy({ username });
+const getTheIngredientById = async (req, res, next) => {
+  const { id } = req.params;
 
-//   if (token) {
-
-//     token.destroy(err => {
-//       if (err) {
-//         res.status(500).json({ message: 'Logout failed' });
-//       } else {
-//         res.status(200).json({ message: 'Bye, thanks for visiting' });
-//       }
-//     });
-//   } else {
-//     res.status(200).json({ message: 'Bye, thanks for visiting' });
-//   }
-// };
+  try {
+    const ingredient = await Post.getIngredientById(id);
+    if (!ingredient) {
+      throw new ErrorHandler(404, 'No ingredient is found in database');
+    }
+    return res.status(200).json({
+      message: 'Ok',
+      ingredient,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
 
 module.exports = {
   createNewUser,
@@ -184,4 +200,7 @@ module.exports = {
   getThePostById,
   getAllChefs,
   getTheChefById,
+  getTheChefByCity,
+  getTheIngredientById,
+
 };
