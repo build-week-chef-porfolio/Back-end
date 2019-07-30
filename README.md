@@ -133,6 +133,8 @@ Login Success
 
 **GET** `https://chefs-portfolio.herokuapp.com/api/users/post/:id` will return an object corresponding to the todo at that ID.
 
+**GET** `https://chefs-portfolio.herokuapp.com/api/users/chef` will return an object with one property('message') and array('chefs') that consists of other objects(individual chefs).
+
 **POST** `https://chefs-portfolio.herokuapp.com/api/users/post` will add a new post, and return the created object: title, meal_type, description, ingredients, and directions are required fields.
 
 imgURL, yield, serving, time are optional
