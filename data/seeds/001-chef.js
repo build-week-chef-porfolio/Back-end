@@ -20,11 +20,11 @@ exports.seed = function(knex) {
           zip_code: 28487,
         },
         {
-          first_name: 'Jamie',
-          last_name: 'Oliver',
-          chef_type: 'Station Chef',
-          city: 'Boston',
-          zip_code: 28487,
+          first_name: 'Rachael',
+          last_name: 'Ray',
+          chef_type: 'Executive Chef',
+          city: 'Copenhagen',
+          zip_code: 27768,
         },
         {
           first_name: 'Wolfgang',
