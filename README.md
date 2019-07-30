@@ -135,6 +135,10 @@ Login Success
 
 **GET** `https://chefs-portfolio.herokuapp.com/api/users/chef/:id` will return an object with one property('message') and the chef(object) that is corresponding to the chef at that ID.
 
+**GET** `https://chefs-portfolio.herokuapp.com/api/users/ingredient/:id` will return an object with one property('message') and the ingredient(object) that has properties that one of them is array(post) that has posts(objects) that have the specified ingredient.
+
+**GET** `https://chefs-portfolio.herokuapp.com/api/users/:city/chef` will return an object with one property('message') and the chef(object) that is corresponding to the city that is specified.
+
 **POST** `https://chefs-portfolio.herokuapp.com/api/users/post` will add a new post, and return the created object: title, meal_type, description, ingredient, and directions are required fields.
 
 imgURL, yield, serving, prep_time, total_time, cook_time, oven_temperature are optional
