@@ -92,6 +92,22 @@ const getThePostById = async (req, res, next) => {
   }
 };
 
+const getTheChefById = async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const chef = await Chef.getChefById(id);
+    if (!chef) {
+      throw new ErrorHandler(404, 'No Chef with that ID is found in database');
+    }
+    return res.status(200).json({
+      message: 'Ok',
+      chef,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
 const createNewPost = async (req, res, next) => {
   try {
     const post = await Post.addPost(req.body);
@@ -167,4 +183,5 @@ module.exports = {
   deletePost,
   getThePostById,
   getAllChefs,
+  getTheChefById,
 };
