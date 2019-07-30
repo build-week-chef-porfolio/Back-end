@@ -21,7 +21,18 @@ const getChefById = async id => {
   }
 };
 
+const getChefByCity = async city => {
+  try {
+    const chef = await db('chef')
+      .where({ city });
+    return chef;
+  } catch (error) {
+    throw new ErrorHandler(500, error.message);
+  }
+};
+
 module.exports = {
   getChefs,
   getChefById,
+  getChefByCity,
 };

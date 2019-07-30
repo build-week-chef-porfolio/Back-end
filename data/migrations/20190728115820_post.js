@@ -22,6 +22,14 @@ exports.up = function(knex) {
         .inTable('chef')
         .onUpdate('CASCADE')
         .onDelete('CASCADE');
+      post
+        .integer('ingredient_id')
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('ingredient')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
     })
 
     .createTable('ingredient', tbl => {
@@ -31,14 +39,6 @@ exports.up = function(knex) {
       tbl.string('quantity', 128);
       tbl.string('serving', 128);
       tbl.string('yield', 128);
-      tbl
-        .integer('post_id')
-        .unsigned()
-        .notNullable()
-        .references('id')
-        .inTable('post')
-        .onUpdate('CASCADE')
-        .onDelete('CASCADE');
     });
 };
 

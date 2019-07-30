@@ -1,6 +1,6 @@
 const express = require('express');
 const { createNewUser, createNewPost, getAllPosts, updatePost,
-  deletePost, getThePostById, getAllChefs, getTheChefById } = require('../controllers');
+  deletePost, getThePostById, getAllChefs, getTheChefById, getTheChefByCity, getTheIngredientById } = require('../controllers');
 
 const { loginUser } = require('../controllers');
 const { authenticate } = require('../auth/authenticate');
@@ -18,6 +18,8 @@ router.get('/users/post', authenticate, getAllPosts);
 router.get('/users/chef', authenticate, getAllChefs);
 router.get('/users/chef/:id', authenticate, getTheChefById);
 router.get('/users/post/:id', authenticate, getThePostById);
+router.get('/users/:city/chef', authenticate, getTheChefByCity);
+router.get('/users/ingredient/:id', authenticate, getTheIngredientById);
 // router.post('/users/logout', logOut);
 
 module.exports = router;

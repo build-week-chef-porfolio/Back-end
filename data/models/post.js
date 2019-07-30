@@ -76,6 +76,18 @@ const deletePost = async id => {
   }
 };
 
+const getIngredientById = async id => {
+  try {
+    const ingredient = await db('ingredient')
+      .where({ id })
+      .first();
+    const posts = await db('post').where({ ingredient_id: ingredient.id });
+    const response = { ...ingredient, posts };
+    return response;
+  } catch (error) {
+    throw new ErrorHandler(500, error.message);
+  }
+};
 
 module.exports = {
   getPosts,
@@ -83,4 +95,5 @@ module.exports = {
   getPostById,
   updatePost,
   deletePost,
+  getIngredientById,
 };
