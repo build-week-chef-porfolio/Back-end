@@ -125,9 +125,7 @@ Login Success
 ```
 
 
-## Other Routes:
-
-## Post
+## Routes:
 
 **GET** `https://chefs-portfolio.herokuapp.com/api/users/post` will return an object with one property('message') and array('posts') that consists of other objects(individual posts).
 
