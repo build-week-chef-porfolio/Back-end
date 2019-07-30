@@ -3,6 +3,8 @@ const bcrypt = require('bcryptjs');
 const { ErrorHandler } = require('../helpers');
 const User = require('../data/models/user');
 const Post = require('../data/models/post');
+const Chef = require('../data/models/chef');
+
 const { generateToken } = require('../auth/authenticate');
 
 const createNewUser = async (req, res, next) => {
@@ -53,6 +55,21 @@ const getAllPosts = async (req, res, next) => {
     return res.status(200).json({
       message: 'Ok',
       posts,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+const getAllChefs = async (req, res, next) => {
+  try {
+    const chefs = await Chef.getChefs();
+    if (!chefs) {
+      throw new ErrorHandler(404, 'No chefs found in database');
+    }
+    return res.status(200).json({
+      message: 'Ok',
+      chefs,
     });
   } catch (error) {
     next(error);
@@ -149,4 +166,5 @@ module.exports = {
   updatePost,
   deletePost,
   getThePostById,
-}
+  getAllChefs,
+};
