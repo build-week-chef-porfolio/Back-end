@@ -6,10 +6,42 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex('ingredient').insert([
         {
-          name: 'Caramel', unit: 'one cup', quantity: '2', serving: '3', yield: '5',
+          name: 'sugar',
+          unit: 'tablespoon',
+          quantity: '10',
+          serving: '5',
+          yield: '2',
         },
         {
-          name: 'Banana', unit: '10 slices', quantity: '3', serving: '2', yield: '3',
+          name: 'meat',
+          unit: 'slice',
+          quantity: '4',
+          serving: '5',
+          yield: '3',
+        },
+        {
+          name: 'vegetable',
+          unit: 'bowl',
+          quantity: '3',
+          serving: '2',
+          yield: '3',
+        },
+        {
+          name: 'dairy',
+        },
+        {
+          name: 'fish',
+          unit: 'slice',
+          quantity: '4',
+          serving: '2',
+          yield: '4',
+        },
+        {
+          name: 'eggs',
+          unit: 'egg',
+          quantity: '4',
+          serving: '2',
+          yield: '3',
         },
       ]);
     });
