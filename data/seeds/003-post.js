@@ -6,7 +6,8 @@ exports.seed = function(knex) {
       // Inserts seed entries
       return knex('post').insert([
         {
-          imgURL: 'https://unsplash.com/photos/gHm50qaMaXc',
+          imgURL:
+            'https://images.unsplash.com/photo-1511911063855-2bf39afa5b2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80',
           title: 'Caramel Cake',
           yield: '5 servings',
           serving: '2',
@@ -25,7 +26,8 @@ exports.seed = function(knex) {
         },
 
         {
-          imgURL: 'https://unsplash.com/photos/of0pMsWApZE',
+          imgURL:
+            'https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80',
           title: 'Fruit Pie',
           yield: '5 servings',
           serving: '2',
@@ -43,7 +45,8 @@ exports.seed = function(knex) {
           ingredient_id: 2,
         },
         {
-          imgURL: 'https://unsplash.com/photos/IGfIGP5ONV0',
+          imgURL:
+            'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80',
           title: 'Veggie Bowl',
           yield: '4 servings',
           serving: '3',
@@ -59,7 +62,8 @@ exports.seed = function(knex) {
           ingredient_id: 2,
         },
         {
-          imgURL: 'https://unsplash.com/photos/FFqNATH27EM',
+          imgURL:
+            'https://images.unsplash.com/photo-1525351484163-7529414344d8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2200&q=80',
           title: 'Sunny-Side Up Egg',
           yield: '2 servings',
           serving: '3',
@@ -75,7 +79,8 @@ exports.seed = function(knex) {
           ingredient_id: 2,
         },
         {
-          imgURL: 'https://unsplash.com/photos/8pUjhBm4cLw',
+          imgURL:
+            'https://images.unsplash.com/photo-1485921325833-c519f76c4927?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1000&q=80',
           title: 'Creamy Fish Dinner with Greens',
           yield: '3 servings',
           serving: '4',
