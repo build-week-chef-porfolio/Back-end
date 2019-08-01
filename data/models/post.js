@@ -12,25 +12,6 @@ const getPostById = async id => {
   }
 };
 
-// async function getPostById(postData) {
-//   const [key] = Object.keys(postData);
-//   const [value] = Object.values(postData);
-
-//   return db('post')
-//   .select('post.Title as postT', 'post.Description as postD', 'post.Ingredients as postI', 'post.Description');
-// }
-
-// const getPostById = async (req, res) => {
-//   try {
-//     if (!req.post) {
-//       throw new ErrorHandler(500, 'Post with the specified ID does not exist');
-//     }
-//     return res.status(200).json({ message: 'OK', post: req.post });
-//   } catch (error) {
-//     console.log(error);
-//   }
-// };
-
 const getPosts = () => {
   try {
     const posts = db('post');
