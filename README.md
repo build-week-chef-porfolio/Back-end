@@ -9,6 +9,7 @@ This project is a RESTful API built using Node and Express. The purpose of this 
 - The server is run using Node.
 - Express is a minimalist Node web application framework for building APIs.
 - SQLite3 was used for development.
+- PostgreSQL is an advanced, enterprise class open source relational database that supports both SQL             (relational) and JSON (non-relational) querying. It was used for production.
 - Knex is a SQL query builder for JavaScript.
 - Jsonwebtoken is used for authenticating users.
 - Bcrypt is used for hashing passwords.
@@ -24,6 +25,7 @@ This project is a RESTful API built using Node and Express. The purpose of this 
 - Node
 - Express
 - SQLite3 (Development)
+- PostgreSQL (Production)
 - Knex
 - Bcryptjs
 - Jsonwebtoken
@@ -34,7 +36,7 @@ This project is a RESTful API built using Node and Express. The purpose of this 
 - Cross-Env (Development)
 - Jest (Development)
 - Supertest (Development)
-- Eslint (Development)
+
 
 ## Getting Started
 Install dependencies
