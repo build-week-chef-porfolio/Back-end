@@ -17,9 +17,9 @@ router.delete('/users/post/:id', authenticate, validatePostId, deletePost);
 router.get('/users/post', getAllPosts);
 router.get('/users/chef', getAllChefs);
 router.get('/users/chef/:id', getTheChefById);
-router.get('/users/post/:id', authenticate, getThePostById);
-router.get('/users/:city/chef', authenticate, getTheChefByCity);
-router.get('/users/ingredient/:id', authenticate, getTheIngredientById);
+router.get('/users/post/:id', getThePostById);
+router.get('/users/:city/chef', getTheChefByCity);
+router.get('/users/ingredient/:id', getTheIngredientById);
 // router.post('/users/logout', logOut);
 
 module.exports = router;
