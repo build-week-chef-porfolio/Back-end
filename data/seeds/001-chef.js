@@ -62,6 +62,41 @@ exports.seed = function(knex) {
           city: 'Madrid',
           zip_code: 34345,
         },
+        {
+          first_name: 'Ferran',
+          last_name: 'Adria',
+          chef_type: 'Station Chef',
+          city: 'Madrid',
+          zip_code: 34345,
+        },
+        {
+          first_name: 'Paul',
+          last_name: 'Bocuse',
+          chef_type: 'Sous Chef',
+          city: 'Paris',
+          zip_code: 89345,
+        },
+        {
+          first_name: 'Charlie Trotter',
+          last_name: 'Adria',
+          chef_type: 'Executive Chef',
+          city: 'Las Vegas',
+          zip_code: 56464,
+        },
+        {
+          first_name: 'Emeril',
+          last_name: 'Lagasse',
+          chef_type: 'Executive Chef',
+          city: 'Los Angeles',
+          zip_code: 25788,
+        },
+        {
+          first_name: 'Sanjeev',
+          last_name: 'Kapoor',
+          chef_type: 'Station Chef',
+          city: 'Moscow',
+          zip_code: 56565,
+        },
       ]);
     });
 };

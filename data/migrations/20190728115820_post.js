@@ -14,6 +14,7 @@ exports.up = function(knex) {
       post.string('meal_type', 128).notNullable();
       post.string('ingredient', 255).notNullable();
       post.text('directions').notNullable();
+      post.string('chef', 128);
       post
         .integer('chef_id')
         .unsigned()
