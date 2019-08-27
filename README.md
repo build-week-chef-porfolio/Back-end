@@ -1,5 +1,7 @@
 # Chef Portfolio - Back end
 
+![](images/backend.jpg)
+
 ## Important: The app is deployed on Heroku ##
 
 ## Description
