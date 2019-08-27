@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+
 const { ErrorHandler } = require('../helpers');
 const User = require('../data/models/user');
 const Post = require('../data/models/post');
@@ -202,5 +203,4 @@ module.exports = {
   getTheChefById,
   getTheChefByCity,
   getTheIngredientById,
-
 };
